@@ -33,8 +33,8 @@
       --vip-badge: #10b981;
       --mtnh-color: #2563eb;
       --mtql-color: #16a34a;
-      --status-belum-bg: #f1f5f9;
-      --status-belum-text: #64748b;
+      --status-belum-bg: #fef2f2;
+      --status-belum-text: #b91c1c;
       --status-sudah-bg: #dcfce7;
       --status-sudah-text: #15803d;
     }
@@ -136,10 +136,7 @@
       text-decoration: none;
     }
 
-    .btn-tambah {
-      background-color: var(--header-btn-green);
-      color: white;
-    }
+    .btn-tambah { background-color: var(--header-btn-green); color: white; }
     .btn-tambah:hover { background-color: #047857; }
 
     .btn-refresh {
@@ -237,7 +234,7 @@
     }
     .btn-pill-solid:hover { background: #044e39; }
 
-    /* SUMMARY METRIC CARDS */
+    /* METRICS CARDS */
     .metrics-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
@@ -272,9 +269,9 @@
     }
 
     .metric-card.total .metric-label-group { color: #d97706; }
-    .metric-card.sudah .metric-label-group { color: #334155; }
-    .metric-card.belum .metric-label-group { color: #d97706; }
-    .metric-card.majelis .metric-label-group { color: #334155; }
+    .metric-card.sudah .metric-label-group { color: #059669; }
+    .metric-card.belum .metric-label-group { color: #dc2626; }
+    .metric-card.majelis .metric-label-group { color: #2563eb; }
 
     .metric-value {
       font-size: 34px;
@@ -284,7 +281,7 @@
     }
 
     .metric-value.green { color: #059669; }
-    .metric-value.orange { color: #d97706; }
+    .metric-value.red { color: #dc2626; }
     .metric-value.dark { color: #0f172a; }
 
     .metric-sub {
@@ -301,14 +298,13 @@
     .majelis-stats-row {
       display: flex;
       align-items: center;
-      gap: 22px;
-      font-size: 18px;
+      gap: 20px;
+      font-size: 17px;
       font-weight: 800;
       color: #1e293b;
       margin: 8px 0 6px 0;
     }
 
-    /* REKAP MODAL STYLING */
     .metric-card.total {
       cursor: pointer;
       transition: transform 0.15s, box-shadow 0.15s;
@@ -318,6 +314,7 @@
       box-shadow: 0 6px 16px rgba(0, 0, 0, 0.07);
     }
 
+    /* REKAP MODAL */
     .modal-box.rekap-box {
       max-width: 490px;
       border-radius: 24px;
@@ -396,7 +393,7 @@
       letter-spacing: 0.2px;
     }
 
-    /* FILTER & SEARCH BAR */
+    /* CONTROLS PANEL */
     .controls-panel {
       background: white;
       border: 1px solid var(--card-border);
@@ -491,7 +488,7 @@
       box-shadow: 0 0 0 3px rgba(5, 150, 105, 0.12);
     }
 
-    /* SUB FILTER ROW (Majelis & Kategori) */
+    /* SUB FILTERS */
     .sub-filters {
       display: flex;
       gap: 10px;
@@ -525,7 +522,7 @@
       border-color: #059669;
     }
 
-    /* GRID TAMU */
+    /* GUEST CARDS GRID */
     .guest-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -613,7 +610,7 @@
     .badge-status {
       font-size: 11px;
       font-weight: 700;
-      padding: 2px 10px;
+      padding: 3px 10px;
       border-radius: 9999px;
       white-space: nowrap;
     }
@@ -621,11 +618,13 @@
     .badge-status.belum {
       background-color: var(--status-belum-bg);
       color: var(--status-belum-text);
+      border: 1px solid #fecaca;
     }
 
     .badge-status.sudah {
       background-color: var(--status-sudah-bg);
       color: var(--status-sudah-text);
+      border: 1px solid #a7f3d0;
     }
 
     .guest-alias {
@@ -640,7 +639,7 @@
     .card-meta {
       font-size: 12px;
       color: #64748b;
-      margin-bottom: 8px;
+      margin-bottom: 10px;
     }
 
     .badge-majelis {
@@ -704,9 +703,7 @@
       backdrop-filter: blur(4px);
     }
 
-    .modal-overlay.active {
-      display: flex;
-    }
+    .modal-overlay.active { display: flex; }
 
     .modal-box {
       background: white;
@@ -728,7 +725,7 @@
     }
 
     .modal-title {
-      font-size: 17px;
+      font-size: 16px;
       font-weight: 800;
       color: #0f172a;
       display: flex;
@@ -752,7 +749,7 @@
     }
     .btn-close-modal:hover { background: #e2e8f0; color: #0f172a; }
 
-    /* SCANNER MODAL SPECIFIC STYLING */
+    /* SCANNER MODAL */
     .scan-modes-tab {
       display: flex;
       gap: 8px;
@@ -785,7 +782,6 @@
       box-shadow: 0 2px 6px rgba(0,0,0,0.06);
     }
 
-    /* KAMERA VIEWFINDER */
     .camera-wrapper {
       position: relative;
       background: #0f172a;
@@ -874,7 +870,32 @@
     }
     .auto-confirm-switch input { accent-color: #059669; width: 16px; height: 16px; }
 
-    /* HASIL SCAN / HASIL CARI */
+    .form-group {
+      margin-bottom: 14px;
+    }
+
+    .form-label {
+      font-size: 12px;
+      font-weight: 700;
+      color: #334155;
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    .form-input {
+      width: 100%;
+      padding: 9px 14px;
+      border-radius: 8px;
+      border: 1px solid #cbd5e1;
+      font-size: 13px;
+      outline: none;
+    }
+
+    .form-input:focus {
+      border-color: #059669;
+    }
+
+    /* SCAN RESULT CARD */
     .scan-result-card {
       border: 2px solid #e2e8f0;
       border-radius: 14px;
@@ -942,7 +963,7 @@
       width: 100%;
       padding: 12px;
       border-radius: 10px;
-      font-size: 14px;
+      font-size: 13.5px;
       font-weight: 800;
       border: none;
       cursor: pointer;
@@ -964,7 +985,7 @@
       color: #dc2626;
       margin-top: 8px;
       font-size: 12px;
-      padding: 8px;
+      padding: 9px;
     }
 
     /* TOAST */
@@ -1011,11 +1032,11 @@
 </head>
 <body>
 
-  <!-- NAVBAR -->
+  <!-- TOP NAVBAR -->
   <header class="navbar">
     <div class="nav-left">
       <div class="brand-icon">
-        <i class="fa-solid fa-shield-halved"></i>
+        <i class="fa-solid fa-id-card-clip"></i>
       </div>
       <div>
         <div class="brand-title">Sistem Konfirmasi Pengambilan Kartu Undangan</div>
@@ -1048,59 +1069,63 @@
         <i class="fa-solid fa-cloud-arrow-down banner-icon"></i>
         <div>
           <div class="banner-title">Download Data Siap Cetak untuk Canva (Bulk Create)</div>
-          <div class="banner-desc">File CSV sudah rapi (lengkap dengan nomor, nama, panggilan, majelis &amp; status konfirmasi)</div>
+          <div class="banner-desc">File CSV rapi &amp; terurut persis nomor Excel (nomor, nama, panggilan, majelis, status pengambilan kartu)</div>
         </div>
       </div>
       <div class="banner-buttons">
-        <!-- VIP: 405 Tamu -->
-        <button class="btn-pill-outline" onclick="unduhCsv('VIP')">Unduh CSV VIP (<span id="countVipBtn">405</span>)</button>
-        <!-- VVIP: 47 Tamu -->
+        <button class="btn-pill-outline" onclick="unduhCsv('VIP')">Unduh CSV VIP (<span id="countVipBtn">406</span>)</button>
         <button class="btn-pill-solid" onclick="unduhCsv('VVIP')">Unduh CSV VVIP (<span id="countVvipBtn">47</span>)</button>
       </div>
     </section>
 
     <!-- METRICS CARDS -->
     <section class="metrics-grid">
-      <!-- Card 1: Total (452 Tamu) -->
-      <div class="metric-card total" onclick="bukaModalRekap()" style="cursor: pointer;" title="Klik untuk melihat rincian kategori & majelis">
+      <!-- Card 1: Total Tamu -->
+      <div class="metric-card total" onclick="bukaModalRekap()" title="Klik untuk melihat rincian kategori & majelis">
         <div class="metric-top">
           <div class="metric-label-group">
-            <i class="fa-solid fa-users"></i> TOTAL
+            <i class="fa-solid fa-users"></i> TOTAL UNDANGAN
           </div>
           <i class="fa-solid fa-chevron-right" style="color: #cbd5e1; font-size: 12px;"></i>
         </div>
-        <div class="metric-value dark" id="totalGuestCount">452</div>
-        <div class="metric-sub teal">VIP, VVIP</div>
+        <div class="metric-value dark" id="totalGuestCount">453</div>
+        <div class="metric-sub teal" id="totalBreakdownSubtitle">VIP: 406 • VVIP: 47</div>
       </div>
 
-      <!-- Card 2: Sudah Ambil -->
+      <!-- Card 2: Sudah Ambil Kartu -->
       <div class="metric-card sudah">
         <div class="metric-top">
-          <div class="metric-label-group">Sudah Diambil</div>
+          <div class="metric-label-group">
+            <i class="fa-solid fa-circle-check"></i> Sudah Ambil Kartu
+          </div>
         </div>
         <div class="metric-value green" id="sudahAmbilCount">0</div>
         <div class="metric-sub green" id="sudahAmbilBreakdown">VIP: 0 • VVIP: 0</div>
       </div>
 
-      <!-- Card 3: Belum Ambil -->
+      <!-- Card 3: Belum Ambil Kartu -->
       <div class="metric-card belum">
         <div class="metric-top">
-          <div class="metric-label-group">Belum Diambil</div>
+          <div class="metric-label-group">
+            <i class="fa-solid fa-clock"></i> Belum Ambil Kartu
+          </div>
         </div>
-        <div class="metric-value orange" id="belumAmbilCount">452</div>
-        <div class="metric-sub">Menunggu pengambilan</div>
+        <div class="metric-value red" id="belumAmbilCount">453</div>
+        <div class="metric-sub" id="belumAmbilBreakdown">Menunggu pengambilan kartu</div>
       </div>
 
-      <!-- Card 4: Asal Majelis (MTNH 268 & MTQL 184) -->
+      <!-- Card 4: Asal Majelis -->
       <div class="metric-card majelis">
         <div class="metric-top">
-          <div class="metric-label-group">Asal Majelis</div>
+          <div class="metric-label-group">
+            <i class="fa-solid fa-mosque"></i> Asal Majelis
+          </div>
         </div>
         <div class="majelis-stats-row">
           <span>MTNH: <span id="countMTNH">268</span></span>
-          <span>MTQL: <span id="countMTQL">184</span></span>
+          <span>MTQL: <span id="countMTQL">185</span></span>
         </div>
-        <div class="metric-sub">Sebaran kedua majelis</div>
+        <div class="metric-sub">Sebaran kedua majelis ta'lim</div>
       </div>
     </section>
 
@@ -1108,37 +1133,37 @@
     <section class="controls-panel">
       <div class="tabs-group">
         <button class="filter-tab active" data-tab="all" onclick="setMainTab('all', this)">
-          <i class="fa-solid fa-users-viewfinder"></i> 1. Total Tamu Undangan
+          <i class="fa-solid fa-users"></i> 1. Total Tamu Undangan
         </button>
         <button class="filter-tab" data-tab="sudah" onclick="setMainTab('sudah', this)">
-          <i class="fa-solid fa-user-check" style="color: #059669;"></i> 2. Sudah Discan (Diambil)
+          <i class="fa-solid fa-id-card" style="color: #059669;"></i> 2. Sudah Ambil Kartu
         </button>
         <button class="filter-tab" data-tab="belum" onclick="setMainTab('belum', this)">
-          <i class="fa-solid fa-user-clock" style="color: #d97706;"></i> 3. Belum Diambil
+          <i class="fa-solid fa-hourglass-half" style="color: #dc2626;"></i> 3. Belum Ambil Kartu
         </button>
         <label class="checkbox-container">
           <input type="checkbox" id="checkOnlyFilled" checked onchange="renderCards()">
-          <span>Hanya yang terisi</span>
+          <span>Hanya yang ada nama</span>
         </label>
       </div>
 
       <div class="search-box-wrapper">
         <i class="fa-solid fa-magnifying-glass search-icon"></i>
-        <input type="text" id="searchInput" class="search-input" placeholder="Cari nama / no. kursi..." oninput="renderCards()">
+        <input type="text" id="searchInput" class="search-input" placeholder="Cari nama / nomor kursi asli..." oninput="renderCards()">
       </div>
     </section>
 
     <!-- SUB FILTER CHIPS -->
     <div class="sub-filters">
       <span class="sub-label"><i class="fa-solid fa-filter"></i> Majelis:</span>
-      <button class="chip active" data-majelis="ALL" onclick="setMajelisFilter('ALL', this)">Semua</button>
-      <button class="chip" data-majelis="MTNH" onclick="setMajelisFilter('MTNH', this)">MTNH</button>
-      <button class="chip" data-majelis="MTQL" onclick="setMajelisFilter('MTQL', this)">MTQL</button>
+      <button class="chip active" data-majelis="ALL" onclick="setMajelisFilter('ALL', this)">Semua (<span id="chipCountMajelisAll">453</span>)</button>
+      <button class="chip" data-majelis="MTNH" onclick="setMajelisFilter('MTNH', this)">MTNH (<span id="chipCountMTNH">268</span>)</button>
+      <button class="chip" data-majelis="MTQL" onclick="setMajelisFilter('MTQL', this)">MTQL (<span id="chipCountMTQL">185</span>)</button>
 
       <span class="sub-label" style="margin-left: 12px;"><i class="fa-solid fa-layer-group"></i> Kategori:</span>
-      <button class="chip active" data-cat="ALL" onclick="setCategoryFilter('ALL', this)">Semua</button>
-      <button class="chip" data-cat="VVIP" onclick="setCategoryFilter('VVIP', this)">VVIP</button>
-      <button class="chip" data-cat="VIP" onclick="setCategoryFilter('VIP', this)">VIP</button>
+      <button class="chip active" data-cat="ALL" onclick="setCategoryFilter('ALL', this)">Semua (<span id="chipCountCatAll">453</span>)</button>
+      <button class="chip" data-cat="VVIP" onclick="setCategoryFilter('VVIP', this)">VVIP (<span id="chipCountVVIP">47</span>)</button>
+      <button class="chip" data-cat="VIP" onclick="setCategoryFilter('VIP', this)">VIP (<span id="chipCountVIP">406</span>)</button>
     </div>
 
     <!-- GUEST CARDS GRID -->
@@ -1147,38 +1172,38 @@
     </section>
   </main>
 
-  <!-- MODAL REKAP TAMU BERDASARKAN KATEGORI -->
+  <!-- MODAL REKAP TAMU BERDASARKAN KATEGORI & MAJELIS -->
   <div class="modal-overlay" id="modalRekap">
     <div class="modal-box rekap-box">
       <div class="modal-header" style="margin-bottom: 20px;">
         <div class="modal-title" style="font-size: 15px; font-weight: 800; color: #064e3b; letter-spacing: -0.2px;">
-          <i class="fa-solid fa-layer-group" style="color: #059669; font-size: 18px;"></i> REKAP TAMU BERDASARKAN KATEGORI
+          <i class="fa-solid fa-layer-group" style="color: #059669; font-size: 18px;"></i> REKAP UNDANGAN KARTU
         </div>
         <button class="btn-close-modal" onclick="tutupModalRekap()">✕</button>
       </div>
 
-      <!-- Item VIP (405 Tamu) -->
+      <!-- Item VIP -->
       <div class="rekap-item-card">
         <div class="rekap-item-left">
           <div class="rekap-item-title">VIP</div>
-          <div class="rekap-item-sub">Slot Undangan VIP</div>
+          <div class="rekap-item-sub">Slot Kartu Undangan VIP</div>
         </div>
-        <div class="rekap-badge vip" id="rekapVipCount">405 Tamu</div>
+        <div class="rekap-badge vip" id="rekapVipCount">406 Tamu</div>
       </div>
 
-      <!-- Item VVIP (47 Tamu) -->
+      <!-- Item VVIP -->
       <div class="rekap-item-card">
         <div class="rekap-item-left">
           <div class="rekap-item-title">VVIP</div>
-          <div class="rekap-item-sub">Slot Undangan Khusus</div>
+          <div class="rekap-item-sub">Slot Kartu Undangan Khusus VVIP</div>
         </div>
         <div class="rekap-badge vvip" id="rekapVvipCount">47 Tamu</div>
       </div>
 
-      <!-- Section Divider Title -->
-      <div class="rekap-section-label">RINCIAN PER MAJELIS</div>
+      <!-- Section Divider -->
+      <div class="rekap-section-label">RINCIAN PER MAJELIS TA'LIM</div>
 
-      <!-- Item MTNH VIP (243 Tamu) -->
+      <!-- Item MTNH VIP -->
       <div class="rekap-item-card">
         <div class="rekap-item-left">
           <div class="rekap-item-title">MTNH VIP</div>
@@ -1187,7 +1212,7 @@
         <div class="rekap-badge vip" id="rekapMtnhVipCount">243 Tamu</div>
       </div>
 
-      <!-- Item MTNH VVIP (25 Tamu) -->
+      <!-- Item MTNH VVIP -->
       <div class="rekap-item-card">
         <div class="rekap-item-left">
           <div class="rekap-item-title">MTNH VVIP</div>
@@ -1196,16 +1221,16 @@
         <div class="rekap-badge vvip" id="rekapMtnhVvipCount">25 Tamu</div>
       </div>
 
-      <!-- Item MTQL VIP (162 Tamu) -->
+      <!-- Item MTQL VIP -->
       <div class="rekap-item-card">
         <div class="rekap-item-left">
           <div class="rekap-item-title">MTQL VIP</div>
           <div class="rekap-item-sub">Majelis MTQL • VIP</div>
         </div>
-        <div class="rekap-badge vip" id="rekapMtqlVipCount">162 Tamu</div>
+        <div class="rekap-badge vip" id="rekapMtqlVipCount">163 Tamu</div>
       </div>
 
-      <!-- Item MTQL VVIP (22 Tamu) -->
+      <!-- Item MTQL VVIP -->
       <div class="rekap-item-card">
         <div class="rekap-item-left">
           <div class="rekap-item-title">MTQL VVIP</div>
@@ -1214,10 +1239,10 @@
         <div class="rekap-badge vvip" id="rekapMtqlVvipCount">22 Tamu</div>
       </div>
 
-      <!-- Dark Green Total Kuota Bar (452 / 550 Kursi) -->
+      <!-- Total Kuota Bar -->
       <div class="rekap-total-bar">
-        <span>Total Kuota Terisi</span>
-        <span id="rekapTotalKuota">452 / 550 Kursi</span>
+        <span>Total Kuota Terdaftar</span>
+        <span id="rekapTotalKuota">453 Kursi</span>
       </div>
     </div>
   </div>
@@ -1227,22 +1252,22 @@
     <div class="modal-box">
       <div class="modal-header">
         <div class="modal-title">
-          <i class="fa-solid fa-camera" style="color: #f59e0b;"></i> Scan Barcode &amp; Cari Tamu
+          <i class="fa-solid fa-barcode" style="color: #f59e0b;"></i> Scan Barcode Pengambilan Kartu
         </div>
         <button class="btn-close-modal" onclick="tutupModalScan()">✕</button>
       </div>
 
-      <!-- Mode Tabs (Kamera vs Input Scanner Alat) -->
+      <!-- Mode Tabs -->
       <div class="scan-modes-tab">
         <button class="scan-tab-btn active" id="tabModeCamera" onclick="switchScanMode('camera')">
           <i class="fa-solid fa-video"></i> Kamera Scanner (HP/Laptop)
         </button>
         <button class="scan-tab-btn" id="tabModeManual" onclick="switchScanMode('manual')">
-          <i class="fa-solid fa-barcode"></i> Input / Scanner Gun USB
+          <i class="fa-solid fa-keyboard"></i> Input / Scanner Gun USB
         </button>
       </div>
 
-      <!-- Area Scanner Kamera -->
+      <!-- Kamera Scanner -->
       <div id="sectionCameraScanner">
         <div class="camera-wrapper">
           <div id="reader"></div>
@@ -1263,20 +1288,20 @@
         </div>
       </div>
 
-      <!-- Opsi Auto Confirm -->
+      <!-- Auto Confirm -->
       <label class="auto-confirm-switch">
         <input type="checkbox" id="checkAutoConfirm" checked>
-        <span>⚡ Langsung Otomatis Konfirmasi "SUDAH" saat discan</span>
+        <span>⚡ Langsung Otomatis Set "SUDAH AMBIL" saat discan</span>
       </label>
 
       <!-- Input Scanner Alat / Ketik Manual -->
       <div class="form-group" style="margin-bottom: 8px;">
         <label class="form-label" style="display:flex; justify-content:space-between;">
-          <span>Nomor Kursi / Nama Tamu / Barcode:</span>
+          <span>Nomor Kartu / Barcode / Nama Tamu:</span>
           <span style="font-weight:400; color:#64748b;">(Tekan Enter setelah scan)</span>
         </label>
         <div style="position:relative;">
-          <input type="text" id="quickScanInput" class="form-input" placeholder="Scan barcode kartu atau ketik nomor/nama..." oninput="handleQuickScan(this.value)" onkeydown="if(event.key==='Enter') prosesEnterScan(this.value)">
+          <input type="text" id="quickScanInput" class="form-input" placeholder="Scan barcode kartu atau ketik nomor asli..." oninput="handleQuickScan(this.value)" onkeydown="if(event.key==='Enter') prosesEnterScan(this.value)">
           <i class="fa-solid fa-barcode" style="position:absolute; right:12px; top:50%; transform:translateY(-50%); color:#94a3b8; font-size:16px;"></i>
         </div>
       </div>
@@ -1297,10 +1322,10 @@
         <div class="scan-status-alert" id="resStatusAlert"></div>
 
         <button class="scan-action-btn-large confirm" id="resBtnConfirm" onclick="konfirmasiDariScanCard()">
-          <i class="fa-solid fa-circle-check"></i> Konfirmasi Pengambilan Sekarang
+          <i class="fa-solid fa-id-card-clip"></i> Konfirmasi Ambil Kartu Sekarang
         </button>
         <button class="scan-action-btn-large revert" id="resBtnRevert" style="display:none;" onclick="batalkanDariScanCard()">
-          <i class="fa-solid fa-rotate-left"></i> Batalkan Status Pengambilan (Reset ke Belum)
+          <i class="fa-solid fa-rotate-left"></i> Batalkan Pengambilan (Reset ke Belum Ambil)
         </button>
       </div>
 
@@ -1315,7 +1340,7 @@
         <button class="btn-close-modal" onclick="tutupModalConfig()">✕</button>
       </div>
       <p style="font-size: 13px; color: #64748b; margin-bottom: 14px;">
-        URL deployment Web App hasil deploy Apps Script Anda:
+        Pastikan Web App mengarah ke spreadsheet kartu undangan:
       </p>
       <div class="form-group" style="margin-bottom: 14px;">
         <label class="form-label">Google Apps Script Web App URL</label>
@@ -1331,14 +1356,14 @@
   <!-- TOAST NOTIFIKASI -->
   <div class="toast" id="toastBox">
     <i class="fa-solid fa-circle-check" style="color: #34d399; font-size: 16px;"></i>
-    <span id="toastMessage">Konfirmasi berhasil diperbarui!</span>
+    <span id="toastMessage">Konfirmasi pengambilan kartu berhasil!</span>
   </div>
 
   <script>
     /**
-     * KONFIGURASI WEB APP APPS SCRIPT TUNGGAL
+     * URL Deployment Web App Apps Script Terbaru
      */
-    const DEFAULT_API_URL = "https://script.google.com/macros/s/AKfycbzqvorLmB-SibUjxQ3SgvTmi74-cG7N1o92sovFlqnnTdBCpwEGPOoOUykT_CnCat3l/exec";
+    const DEFAULT_API_URL = "https://script.google.com/macros/s/AKfycbwquYDWluf0eoGGIp9tz7sLfb3zSTMjbuxEGvEMkb5YWBZTLBNBqbITai5GrgUfXWZs/exec";
 
     let apiUrl = DEFAULT_API_URL;
     localStorage.setItem('API_URL_KARTU', DEFAULT_API_URL);
@@ -1349,27 +1374,40 @@
     let filterCategory = 'ALL';
     let activeScannedGuest = null;
 
-    // Variabel Scanner Kamera & Pengunci Suara Tunggal (Anti-Spam)
     let html5QrScanner = null;
     let isCameraActive = false;
     let currentCameraFacing = "environment";
     let lastScannedCode = null;
     let lastScanTimestamp = 0;
 
-    // Inisialisasi Saat Halaman Dimuat
-    window.addEventListener('DOMContentLoaded', () => {
-      document.getElementById('apiUrlInput').value = apiUrl;
+    // Normalisasi Majelis MTQL & MTNH
+    function normalizeMajelis(str) {
+      if (!str) return 'MTNH';
+      const clean = String(str).toUpperCase().trim();
+      if (clean.includes('MTQL') || clean.includes('QL') || clean.includes('TAQWA') || clean.includes('LION') || clean.includes('QURRATA')) {
+        return 'MTQL';
+      }
+      return 'MTNH';
+    }
 
-      // Langsung lakukan sinkronisasi data dari Google Apps Script
-      refreshData(false);
+    // Normalisasi Kategori VVIP & VIP
+    function normalizeCategory(str) {
+      if (!str) return 'VIP';
+      const clean = String(str).toUpperCase().trim();
+      return clean.includes('VVIP') ? 'VVIP' : 'VIP';
+    }
 
-      // Auto Refresh latar belakang setiap 12 detik (Polling Live Sync)
-      setInterval(() => {
-        refreshData(false, true);
-      }, 12000);
-    });
+    // Normalisasi Status Kartu
+    function normalizeStatusKartu(val) {
+      if (!val) return 'BELUM';
+      const clean = String(val).toUpperCase().trim();
+      if (clean === 'SUDAH' || clean === 'AMBIL' || clean === 'SUDAH AMBIL' || clean === 'TERAMBIL' || clean === 'TRUE' || clean === '1') {
+        return 'SUDAH';
+      }
+      return 'BELUM';
+    }
 
-    // Helper konversi URL Foto Google Drive ke format Thumbnail resmi
+    // Format Foto Google Drive Thumbnail
     function formatDrivePhotoUrl(url) {
       if (!url || typeof url !== 'string') return '';
       let fileId = '';
@@ -1414,17 +1452,25 @@
           osc.stop(audioCtx.currentTime + 0.35);
         }
       } catch (err) {
-        console.log('Audio feedback:', err);
+        console.log('Audio feedback not supported:', err);
       }
     }
 
-    /**
-     * AMBIL SELURUH DATA TAMU DARI GOOGLE APPS SCRIPT
-     */
-    async function refreshData(manual, background) {
-      manual = manual || false;
-      background = background || false;
+    // Inisialisasi Saat Halaman Dimuat
+    window.addEventListener('DOMContentLoaded', () => {
+      document.getElementById('apiUrlInput').value = apiUrl;
+      refreshData(false);
 
+      // Sinkron latar belakang otomatis tiap 15 detik
+      setInterval(() => {
+        refreshData(false, true);
+      }, 15000);
+    });
+
+    /**
+     * SINKRONISASI DATA DARI GOOGLE APPS SCRIPT
+     */
+    async function refreshData(manual = false, background = false) {
       const btnRefresh = document.getElementById('btnRefresh');
       const syncStatus = document.getElementById('syncStatusText');
       const syncDot = document.getElementById('syncDot');
@@ -1448,53 +1494,55 @@
         }
 
         if (rawList.length > 0) {
-          // DEDUPLIKASI BERBASIS ROW SHEET & KATEGORI
-          const rowMap = new Map();
+          const parsedGuests = rawList.map((item, index) => {
+            const namaLengkap = String(item.namaLengkap || item.nama || '').trim();
+            const category = normalizeCategory(item.category || item.kategori);
+            const majelis = normalizeMajelis(item.majelis);
+            
+            const statusKartu = normalizeStatusKartu(
+              item.statusPengambilan || item.statusKartu || item.statusAmbil || item.statusKonfirmasi || item.status
+            );
 
-          rawList.forEach((item, idx) => {
-            const nama = String(item.namaLengkap || item.nama || '').trim();
-            // Abaikan jika nama kosong, tanda hubung, atau baris header
-            if (!nama || nama === '-' || nama.toLowerCase() === 'nama lengkap' || nama.toLowerCase() === 'nama') return;
-
-            const cat = String(item.category || item.kategori || 'VIP').toUpperCase().trim();
-            const rowNum = item.rowNumber || (idx + 1);
-            const uniqueKey = cat + "_ROW_" + rowNum;
-
-            if (!rowMap.has(uniqueKey)) {
-              rowMap.set(uniqueKey, {
-                ...item,
-                namaLengkap: nama,
-                category: cat,
-                rowNumber: rowNum
-              });
-            } else {
-              const existing = rowMap.get(uniqueKey);
-              if (existing.statusKonfirmasi !== 'SUDAH' && item.statusKonfirmasi === 'SUDAH') {
-                rowMap.set(uniqueKey, { ...existing, statusKonfirmasi: 'SUDAH' });
-              }
+            let nomorAsli = null;
+            if (item.nomor !== undefined && item.nomor !== null && item.nomor !== '') {
+              nomorAsli = parseInt(item.nomor, 10);
+            } else if (item.no !== undefined && item.no !== null && item.no !== '') {
+              nomorAsli = parseInt(item.no, 10);
+            } else if (item.noKursi !== undefined && item.noKursi !== null && item.noKursi !== '') {
+              nomorAsli = parseInt(item.noKursi, 10);
             }
-          });
 
-          // Kelompokkan dan berikan nomor urut yang tepat sesuai spreadsheet masing-masing:
-          // VVIP: #1 s/d #47
-          // VIP: #1 s/d #405
-          const allItems = Array.from(rowMap.values());
-          const vvipList = allItems.filter(g => g.category === 'VVIP').sort((a, b) => (a.rowNumber || 0) - (b.rowNumber || 0));
-          const vipList = allItems.filter(g => g.category === 'VIP').sort((a, b) => (a.rowNumber || 0) - (b.rowNumber || 0));
+            const rowNumber = item.rowNumber || (index + 1);
+
+            return {
+              ...item,
+              rowNumber: rowNumber,
+              namaLengkap: namaLengkap,
+              namaPanggilan: String(item.namaPanggilan || item.panggilan || '-').trim(),
+              category: category,
+              majelis: majelis,
+              nomor: nomorAsli,
+              statusKonfirmasi: statusKartu,
+              fotoUrl: item.fotoUrl || item.foto || ''
+            };
+          }).filter(g => g.namaLengkap.length > 0);
+
+          const vvipList = parsedGuests.filter(g => g.category === 'VVIP');
+          const vipList = parsedGuests.filter(g => g.category === 'VIP');
 
           vvipList.forEach((g, idx) => {
-            const num = idx + 1;
-            g.nomor = num;
-            g.id = "VVIP_" + num;
+            if (!g.nomor || isNaN(g.nomor)) g.nomor = idx + 1;
+            g.id = "VVIP_" + g.nomor;
           });
 
           vipList.forEach((g, idx) => {
-            const num = idx + 1;
-            g.nomor = num;
-            g.id = "VIP_" + num;
+            if (!g.nomor || isNaN(g.nomor)) g.nomor = idx + 1;
+            g.id = "VIP_" + g.nomor;
           });
 
-          // Gabungkan: VVIP di atas, VIP di bawah
+          vvipList.sort((a, b) => a.nomor - b.nomor);
+          vipList.sort((a, b) => a.nomor - b.nomor);
+
           allGuests = [...vvipList, ...vipList];
 
           updateMetrics();
@@ -1502,11 +1550,11 @@
 
           syncStatus.textContent = 'Sinkron Live ke Google Sheets & Cloud (Terhubung)';
           syncDot.style.backgroundColor = '#34d399';
-          if (manual) showToast('Data tamu berhasil diperbarui langsung dari Google Sheets!');
+          if (manual) showToast('Data kartu undangan berhasil diperbarui dari Sheets!');
         }
       } catch (err) {
-        console.warn('Gagal sinkron:', err);
-        if (manual) showToast('Koneksi terhambat: ' + err.message);
+        console.warn('Gagal sinkron data:', err);
+        if (manual) showToast('Gagal sinkron: ' + err.message);
       } finally {
         if (manual && btnRefresh) {
           btnRefresh.innerHTML = '<i class="fa-solid fa-rotate"></i> Refresh Sheets';
@@ -1521,14 +1569,26 @@
 
       const newStatus = guest.statusKonfirmasi === 'SUDAH' ? 'BELUM' : 'SUDAH';
       guest.statusKonfirmasi = newStatus;
+      
       updateMetrics();
       renderCards();
 
-      showToast(guest.namaLengkap + (newStatus === 'SUDAH' ? ' berhasil konfirmasi ambil kartu!' : ' dibatalkan status pengambilannya.'));
+      showToast(
+        guest.namaLengkap + 
+        (newStatus === 'SUDAH' ? ' [SUDAH AMBIL KARTU]' : ' [DIBATALKAN, BELUM AMBIL KARTU]')
+      );
 
       if (apiUrl) {
         try {
-          const updateUrl = apiUrl + (apiUrl.includes('?') ? '&' : '?') + "action=update&category=" + encodeURIComponent(guest.category) + "&nama=" + encodeURIComponent(guest.namaLengkap) + "&row=" + (guest.rowNumber || '') + "&status=" + encodeURIComponent(newStatus) + "&_t=" + Date.now();
+          const updateUrl = apiUrl + (apiUrl.includes('?') ? '&' : '?') + 
+            "action=update" +
+            "&category=" + encodeURIComponent(guest.category) + 
+            "&nama=" + encodeURIComponent(guest.namaLengkap) + 
+            "&row=" + (guest.rowNumber || '') + 
+            "&status=" + encodeURIComponent(newStatus) + 
+            "&statusKartu=" + encodeURIComponent(newStatus) + 
+            "&_t=" + Date.now();
+          
           await fetch(updateUrl, { method: 'GET', mode: 'no-cors' });
         } catch (err) {
           console.error('Network error ke Apps Script:', err);
@@ -1536,103 +1596,54 @@
       }
     }
 
-    // Update Metrik & Angka Statistik (Presisi Sesuai Spreadsheet: MTNH 268 & MTQL 184, Total 452)
+    // Update Angka Metrik & Rekap
     function updateMetrics() {
       const total = allGuests.length;
       const sudahList = allGuests.filter(g => g.statusKonfirmasi === 'SUDAH');
       const sudahTotal = sudahList.length;
+      const belumTotal = total - sudahTotal;
 
-      let sudahVip = sudahList.filter(g => g.category === 'VIP').length;
-      let sudahVvip = sudahList.filter(g => g.category === 'VVIP').length;
+      const sudahVip = sudahList.filter(g => g.category === 'VIP').length;
+      const sudahVvip = sudahList.filter(g => g.category === 'VVIP').length;
 
-      let totalVip = allGuests.filter(g => g.category === 'VIP').length;
-      let totalVvip = allGuests.filter(g => g.category === 'VVIP').length;
+      const totalVip = allGuests.filter(g => g.category === 'VIP').length;
+      const totalVvip = allGuests.filter(g => g.category === 'VVIP').length;
 
-      // Hitung majelis aktual dengan pembersihan string yang teliti
-      let countMtnh = 0;
-      let countMtql = 0;
+      let countMtnh = allGuests.filter(g => g.majelis === 'MTNH').length;
+      let countMtql = allGuests.filter(g => g.majelis === 'MTQL').length;
 
-      allGuests.forEach(g => {
-        const m = (g.majelis || '').toUpperCase().trim();
-        if (m.includes('MTQL') || m.includes('QL') || m.includes('TAQWA')) {
-          countMtql++;
-        } else if (m.includes('MTNH') || m.includes('NH') || m.includes('NURUL') || m.includes('HUDA')) {
-          countMtnh++;
-        } else {
-          countMtnh++;
-        }
-      });
+      let mtnhVip = allGuests.filter(g => g.category === 'VIP' && g.majelis === 'MTNH').length;
+      let mtnhVvip = allGuests.filter(g => g.category === 'VVIP' && g.majelis === 'MTNH').length;
+      let mtqlVip = allGuests.filter(g => g.category === 'VIP' && g.majelis === 'MTQL').length;
+      let mtqlVvip = allGuests.filter(g => g.category === 'VVIP' && g.majelis === 'MTQL').length;
 
-      // Perhitungan Rincian Kategori & Majelis untuk Modal Rekap
-      let mtnhVip = 0;
-      let mtnhVvip = 0;
-      let mtqlVip = 0;
-      let mtqlVvip = 0;
-
-      allGuests.forEach(g => {
-        const m = (g.majelis || '').toUpperCase().trim();
-        const isMtql = m.includes('MTQL') || m.includes('QL') || m.includes('TAQWA');
-        const isVvip = g.category === 'VVIP';
-
-        if (isVvip) {
-          if (isMtql) mtqlVvip++;
-          else mtnhVvip++;
-        } else {
-          if (isMtql) mtqlVip++;
-          else mtnhVip++;
-        }
-      });
-
-      // Rekonsiliasi presisi jika data riil spreadsheet (452 atau 453)
-      let displayTotal = total;
-      let displayTotalVip = totalVip;
-      let displayTotalVvip = totalVvip;
-
-      if (total === 452 || total === 453) {
-        displayTotal = 452;
-        displayTotalVip = 405;
-        displayTotalVvip = 47;
-        countMtnh = 268;
-        countMtql = 184;
-        mtnhVip = 243;
-        mtnhVvip = 25;
-        mtqlVip = 162;
-        mtqlVvip = 22;
-      }
-
-      const belumTotal = displayTotal - sudahTotal;
-
-      document.getElementById('totalGuestCount').textContent = displayTotal;
+      document.getElementById('totalGuestCount').textContent = total;
+      document.getElementById('totalBreakdownSubtitle').textContent = "VIP: " + totalVip + " • VVIP: " + totalVvip;
       document.getElementById('sudahAmbilCount').textContent = sudahTotal;
       document.getElementById('sudahAmbilBreakdown').textContent = "VIP: " + sudahVip + " • VVIP: " + sudahVvip;
       document.getElementById('belumAmbilCount').textContent = belumTotal;
+      document.getElementById('belumAmbilBreakdown').textContent = "Sisa " + belumTotal + " kartu belum diambil";
+      
       document.getElementById('countMTNH').textContent = countMtnh;
       document.getElementById('countMTQL').textContent = countMtql;
 
-      document.getElementById('countVipBtn').textContent = displayTotalVip;
-      document.getElementById('countVvipBtn').textContent = displayTotalVvip;
+      document.getElementById('countVipBtn').textContent = totalVip;
+      document.getElementById('countVvipBtn').textContent = totalVvip;
 
-      // Update nilai di dalam Modal Rekap
-      const elRekapVip = document.getElementById('rekapVipCount');
-      if (elRekapVip) elRekapVip.textContent = displayTotalVip + " Tamu";
+      document.getElementById('chipCountMajelisAll').textContent = total;
+      document.getElementById('chipCountMTNH').textContent = countMtnh;
+      document.getElementById('chipCountMTQL').textContent = countMtql;
+      document.getElementById('chipCountCatAll').textContent = total;
+      document.getElementById('chipCountVVIP').textContent = totalVvip;
+      document.getElementById('chipCountVIP').textContent = totalVip;
 
-      const elRekapVvip = document.getElementById('rekapVvipCount');
-      if (elRekapVvip) elRekapVvip.textContent = displayTotalVvip + " Tamu";
-
-      const elRekapMtnhVip = document.getElementById('rekapMtnhVipCount');
-      if (elRekapMtnhVip) elRekapMtnhVip.textContent = mtnhVip + " Tamu";
-
-      const elRekapMtnhVvip = document.getElementById('rekapMtnhVvipCount');
-      if (elRekapMtnhVvip) elRekapMtnhVvip.textContent = mtnhVvip + " Tamu";
-
-      const elRekapMtqlVip = document.getElementById('rekapMtqlVipCount');
-      if (elRekapMtqlVip) elRekapMtqlVip.textContent = mtqlVip + " Tamu";
-
-      const elRekapMtqlVvip = document.getElementById('rekapMtqlVvipCount');
-      if (elRekapMtqlVvip) elRekapMtqlVvip.textContent = mtqlVvip + " Tamu";
-
-      const elRekapKuota = document.getElementById('rekapTotalKuota');
-      if (elRekapKuota) elRekapKuota.textContent = displayTotal + " / 550 Kursi";
+      document.getElementById('rekapVipCount').textContent = totalVip + " Tamu";
+      document.getElementById('rekapVvipCount').textContent = totalVvip + " Tamu";
+      document.getElementById('rekapMtnhVipCount').textContent = mtnhVip + " Tamu";
+      document.getElementById('rekapMtnhVvipCount').textContent = mtnhVvip + " Tamu";
+      document.getElementById('rekapMtqlVipCount').textContent = mtqlVip + " Tamu";
+      document.getElementById('rekapMtqlVvipCount').textContent = mtqlVvip + " Tamu";
+      document.getElementById('rekapTotalKuota').textContent = total + " Kursi";
     }
 
     function bukaModalRekap() {
@@ -1654,10 +1665,7 @@
         if (currentTab === 'sudah' && guest.statusKonfirmasi !== 'SUDAH') return false;
         if (currentTab === 'belum' && guest.statusKonfirmasi === 'SUDAH') return false;
 
-        if (filterMajelis !== 'ALL') {
-          if (!guest.majelis.toUpperCase().includes(filterMajelis)) return false;
-        }
-
+        if (filterMajelis !== 'ALL' && guest.majelis !== filterMajelis) return false;
         if (filterCategory !== 'ALL' && guest.category !== filterCategory) return false;
         
         if (onlyFilled && (!guest.namaLengkap || guest.namaLengkap.trim() === '')) return false;
@@ -1667,7 +1675,8 @@
           const matchPanggilan = (guest.namaPanggilan || '').toLowerCase().includes(searchVal);
           const matchMajelis = (guest.majelis || '').toLowerCase().includes(searchVal);
           const matchNo = ("#" + guest.nomor).includes(searchVal) || (String(guest.nomor) === searchVal);
-          if (!matchNama && !matchPanggilan && !matchMajelis && !matchNo) return false;
+          const matchCode = (guest.id || '').toLowerCase().includes(searchVal);
+          if (!matchNama && !matchPanggilan && !matchMajelis && !matchNo && !matchCode) return false;
         }
 
         return true;
@@ -1677,7 +1686,7 @@
         container.innerHTML = `
           <div style="grid-column: 1 / -1; text-align: center; padding: 48px; color: #94a3b8;">
             <i class="fa-solid fa-folder-open" style="font-size: 42px; margin-bottom: 12px; color: #cbd5e1;"></i>
-            <p style="font-size: 14px; font-weight: 600;">Tidak ada data tamu yang cocok dengan filter / pencarian.</p>
+            <p style="font-size: 14px; font-weight: 600;">Tidak ada data kartu undangan yang cocok dengan filter / pencarian.</p>
           </div>
         `;
         return;
@@ -1685,7 +1694,7 @@
 
       container.innerHTML = filtered.map(guest => {
         const isSudah = guest.statusKonfirmasi === 'SUDAH';
-        const majelisClass = (guest.majelis || '').toUpperCase().includes('MTNH') ? 'mtnh' : 'mtql';
+        const majelisClass = guest.majelis === 'MTNH' ? 'mtnh' : 'mtql';
         const defaultAvatar = "https://ui-avatars.com/api/?name=" + encodeURIComponent(guest.namaLengkap) + "&background=059669&color=fff&bold=true";
         const thumbUrl = formatDrivePhotoUrl(guest.fotoUrl) || defaultAvatar;
 
@@ -1699,16 +1708,16 @@
               <div class="card-row-top">
                 <span class="guest-name" title="${guest.namaLengkap}">${guest.namaLengkap}</span>
                 <span class="badge-status ${isSudah ? 'sudah' : 'belum'}">
-                  ${isSudah ? '<i class="fa-solid fa-check"></i> Sudah' : 'Belum'}
+                  ${isSudah ? '<i class="fa-solid fa-check"></i> Sudah Ambil' : '<i class="fa-solid fa-xmark"></i> Belum Ambil'}
                 </span>
               </div>
               <div class="guest-alias">Panggilan: ${guest.namaPanggilan || '-'}</div>
               <div class="card-meta">
-                Nomor: #${guest.nomor} • <span class="badge-majelis ${majelisClass}">${guest.majelis || '-'}</span>
+                Nomor: #${guest.nomor} • <span class="badge-majelis ${majelisClass}">${guest.majelis}</span>
               </div>
               <div class="card-actions">
                 <button class="btn-action-confirm ${isSudah ? 'sudah' : 'belum'}" onclick="toggleKonfirmasi('${guest.id}')">
-                  ${isSudah ? '<i class="fa-solid fa-circle-check"></i> Sudah Diambil' : '<i class="fa-solid fa-plus"></i> Ambil Kartu'}
+                  ${isSudah ? '<i class="fa-solid fa-circle-check"></i> Sudah Diambil' : '<i class="fa-solid fa-id-card"></i> Ambil Kartu'}
                 </button>
               </div>
             </div>
@@ -1747,7 +1756,7 @@
         return;
       }
 
-      let csv = "Nomor,Kategori,Nama Lengkap,Nama Panggilan,Majelis,No HP,Status Pengambilan\n";
+      let csv = "Nomor,Kategori,Nama Lengkap,Nama Panggilan,Majelis,No HP,Status Pengambilan Kartu\n";
       dataToExport.forEach(g => {
         csv += '"' + g.nomor + '","' + g.category + '","' + g.namaLengkap.replace(/"/g, '""') + '","' + (g.namaPanggilan || '').replace(/"/g, '""') + '","' + (g.majelis || '') + '","' + (g.noHp || '') + '","' + g.statusKonfirmasi + '"\n';
       });
@@ -1878,7 +1887,7 @@
       }
     }
 
-    function onScanSuccess(decodedText, decodedResult) {
+    function onScanSuccess(decodedText) {
       const cleanCode = String(decodedText || '').trim();
       const now = Date.now();
 
@@ -1889,7 +1898,6 @@
       lastScannedCode = cleanCode;
       lastScanTimestamp = now;
 
-      console.log("Barcode terdeteksi:", cleanCode);
       handleFoundGuestByCode(cleanCode);
     }
 
@@ -1897,6 +1905,7 @@
       if (!code) return null;
       const clean = String(code).trim();
 
+      // 1. Cek pola kategori & nomor: "VVIP 10", "VIP-15", "VVIP_5"
       const matchCatNum = clean.match(/(VVIP|VIP)[^0-9]*([0-9]+)/i);
       if (matchCatNum) {
         const cat = matchCatNum[1].toUpperCase();
@@ -1905,9 +1914,11 @@
         if (found) return found;
       }
 
+      // 2. Cek ID persis
       let found = allGuests.find(g => g.id.toLowerCase() === clean.toLowerCase().replace(/[- ]/g, '_'));
       if (found) return found;
 
+      // 3. Cek nomor murni
       const matchNumOnly = clean.match(/^[#]?([0-9]+)$/);
       if (matchNumOnly) {
         const num = parseInt(matchNumOnly[1], 10);
@@ -1922,9 +1933,11 @@
         }
       }
 
+      // 4. Cek nama lengkap
       found = allGuests.find(g => g.namaLengkap.toLowerCase() === clean.toLowerCase());
       if (found) return found;
 
+      // 5. Cek nama panggilan
       found = allGuests.find(g => g.namaPanggilan && g.namaPanggilan.toLowerCase() === clean.toLowerCase());
       if (found) return found;
 
@@ -1935,7 +1948,7 @@
       const guest = cariTamuBerdasarkanBarcode(rawCode);
       if (!guest) {
         playBeepSound(false);
-        showToast('Barcode "' + rawCode + '" tidak cocok dengan data tamu manapun.');
+        showToast('Kartu "' + rawCode + '" tidak cocok dengan data tamu.');
         return;
       }
 
@@ -1975,12 +1988,12 @@
 
       if (isSudah) {
         alertBox.className = 'scan-status-alert taken';
-        alertBox.innerHTML = '<i class="fa-solid fa-triangle-exclamation"></i> <span>SUDAH MENGAMBIL</span>';
+        alertBox.innerHTML = '<i class="fa-solid fa-triangle-exclamation"></i> <span>KARTU SUDAH DIAMBIL</span>';
         btnConfirm.style.display = 'none';
         btnRevert.style.display = 'flex';
       } else {
         alertBox.className = 'scan-status-alert ready';
-        alertBox.innerHTML = '<i class="fa-solid fa-circle-check"></i> <span>Tamu terdaftar dan <b>BELUM MENGAMBIL</b> kartu fisik.</span>';
+        alertBox.innerHTML = '<i class="fa-solid fa-circle-check"></i> <span>Tamu terdaftar &amp; <b>BELUM AMBIL KARTU FISIK</b>.</span>';
         btnConfirm.style.display = 'flex';
         btnRevert.style.display = 'none';
       }
@@ -2019,8 +2032,8 @@
 
       const matches = allGuests.filter(g => 
         (g.namaLengkap || '').toLowerCase().includes(val) || 
-        (g.namaPanggilan || '').toLowerCase().includes(val) ||
-        ("#" + g.nomor).includes(val) ||
+        (g.namaPanggilan || '').toLowerCase().includes(val) || 
+        ("#" + g.nomor).includes(val) || 
         (String(g.nomor) === val)
       ).slice(0, 5);
 
@@ -2033,10 +2046,10 @@
         <div style="display:flex; justify-content:space-between; align-items:center; padding:10px 8px; border-bottom:1px solid #f1f5f9; cursor:pointer;" onclick="pilihTamuManual('${g.id}')">
           <div>
             <div style="font-weight:700; font-size:13px; color:#1e293b;">${g.namaLengkap}</div>
-            <div style="font-size:11px; color:#64748b;">#${g.nomor} • ${g.category} • ${g.majelis || '-'}</div>
+            <div style="font-size:11px; color:#64748b;">#${g.nomor} • ${g.category} • ${g.majelis}</div>
           </div>
           <span class="badge-status ${g.statusKonfirmasi === 'SUDAH' ? 'sudah' : 'belum'}">
-            ${g.statusKonfirmasi === 'SUDAH' ? 'Sudah' : 'Belum'}
+            ${g.statusKonfirmasi === 'SUDAH' ? 'Sudah Ambil' : 'Belum Ambil'}
           </span>
         </div>
       `).join('');
@@ -2065,7 +2078,7 @@
       }
       tutupModalConfig();
       refreshData(true);
-      showToast('Konfigurasi link deployment berhasil disimpan!');
+      showToast('URL Google Apps Script berhasil disimpan!');
     }
 
     function resetToDefaultConfig() {
@@ -2073,20 +2086,24 @@
     }
 
     function bukaModalTambah() {
-      const nama = prompt("Masukkan Nama Lengkap Tamu Baru:");
+      const nama = prompt("Masukkan Nama Lengkap Tamu:");
       if (!nama) return;
       const panggilan = prompt("Masukkan Nama Panggilan:", "-");
-      const majelis = prompt("Majelis Ta\'lim (MTNH / MTQL):", "MTNH");
-      const category = prompt("Kategori (VIP / VVIP):", "VIP").toUpperCase();
+      const majelis = prompt("Pilih Majelis (MTNH / MTQL):", "MTNH");
+      const category = prompt("Pilih Kategori (VIP / VVIP):", "VIP");
 
-      const newId = category + "_" + Date.now();
+      const normCat = normalizeCategory(category);
+      const normMaj = normalizeMajelis(majelis);
+      const existingInCat = allGuests.filter(g => g.category === normCat);
+      const newNum = existingInCat.length + 1;
+
       allGuests.unshift({
-        id: newId,
-        nomor: allGuests.length + 1,
-        category: category === 'VVIP' ? 'VVIP' : 'VIP',
+        id: normCat + "_" + newNum,
+        nomor: newNum,
+        category: normCat,
         namaLengkap: nama,
         namaPanggilan: panggilan || '-',
-        majelis: majelis || '-',
+        majelis: normMaj,
         noHp: '-',
         fotoUrl: '',
         statusKonfirmasi: 'BELUM'
@@ -2094,7 +2111,7 @@
 
       updateMetrics();
       renderCards();
-      showToast('Tamu ' + nama + ' berhasil ditambahkan sementara!');
+      showToast('Tamu ' + nama + ' berhasil ditambahkan sementara.');
     }
 
     function showToast(msg) {
