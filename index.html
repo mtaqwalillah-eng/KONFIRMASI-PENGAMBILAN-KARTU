@@ -666,7 +666,7 @@
       background: white;
       border-radius: 20px;
       padding: 18px 20px;
-      max-width: 480px;
+      max-width: 440px;
       width: 100%;
       max-height: 94vh;
       max-height: 94dvh;
@@ -782,14 +782,16 @@
       margin-top: 8px;
     }
 
-    /* SCANNER MODAL - SATU PANEL PROPORSIONAL */
+    /* =======================================================
+       SCANNER MODAL - KAMERA KOTAK PERSEGI 1:1 (QR STYLE)
+       ======================================================= */
     .scan-modes-tab {
       display: flex;
       gap: 6px;
       background: #f1f5f9;
       padding: 4px;
       border-radius: 10px;
-      margin-bottom: 10px;
+      margin-bottom: 12px;
       flex-shrink: 0;
     }
 
@@ -817,18 +819,22 @@
       box-shadow: 0 2px 5px rgba(0,0,0,0.06);
     }
 
+    /* Bingkai Kamera Kotak 1:1 Presisi di Tengah */
     .camera-wrapper {
       position: relative;
       background: #0f172a;
-      border-radius: 14px;
+      border-radius: 18px;
       overflow: hidden;
-      margin-bottom: 10px;
-      width: 100%;
-      height: 210px;
-      max-height: 28dvh;
+      margin: 0 auto 12px auto;
+      width: 240px;
+      height: 240px;
+      aspect-ratio: 1 / 1;
+      border: 3px solid #cbd5e1;
+      box-shadow: 0 6px 16px rgba(15, 23, 42, 0.14);
       display: flex;
       align-items: center;
       justify-content: center;
+      flex-shrink: 0;
     }
 
     #reader {
@@ -842,10 +848,8 @@
     #reader video {
       width: 100% !important;
       height: 100% !important;
-      max-width: 100% !important;
-      max-height: 210px !important;
       object-fit: cover !important;
-      border-radius: 12px;
+      border-radius: 14px;
     }
 
     #reader__scan_region {
@@ -874,8 +878,8 @@
     }
 
     .camera-idle-placeholder i {
-      font-size: 32px;
-      color: #cbd5e1;
+      font-size: 36px;
+      color: #34d399;
       margin-bottom: 8px;
     }
 
@@ -892,8 +896,8 @@
       background: #059669;
       color: white;
       border: none;
-      padding: 8px 12px;
-      border-radius: 8px;
+      padding: 9px 12px;
+      border-radius: 9px;
       font-size: 12px;
       font-weight: 700;
       cursor: pointer;
@@ -908,8 +912,8 @@
       background: #f1f5f9;
       color: #334155;
       border: 1px solid #cbd5e1;
-      padding: 8px 12px;
-      border-radius: 8px;
+      padding: 9px 14px;
+      border-radius: 9px;
       font-size: 12px;
       font-weight: 700;
       cursor: pointer;
@@ -936,7 +940,7 @@
     .auto-confirm-switch input { accent-color: #059669; width: 15px; height: 15px; flex-shrink: 0; }
 
     .form-group {
-      margin-bottom: 8px;
+      margin-bottom: 6px;
       flex-shrink: 0;
     }
 
@@ -995,8 +999,8 @@
     }
 
     .scan-result-avatar {
-      width: 46px;
-      height: 46px;
+      width: 44px;
+      height: 44px;
       flex-shrink: 0;
       border-radius: 50%;
       object-fit: cover;
@@ -1013,10 +1017,10 @@
       overflow: hidden;
       text-overflow: ellipsis;
     }
-    .scan-result-sub { font-size: 11.5px; color: #64748b; margin-top: 1px; }
+    .scan-result-sub { font-size: 11px; color: #64748b; margin-top: 1px; }
 
     .scan-status-alert {
-      padding: 7px 10px;
+      padding: 6px 10px;
       border-radius: 7px;
       font-size: 11.5px;
       font-weight: 700;
@@ -1036,9 +1040,9 @@
 
     .scan-action-btn-large {
       width: 100%;
-      padding: 9px 12px;
+      padding: 8px 12px;
       border-radius: 8px;
-      font-size: 12.5px;
+      font-size: 12px;
       font-weight: 800;
       border: none;
       cursor: pointer;
@@ -1059,8 +1063,8 @@
       border: 1px solid #cbd5e1;
       color: #dc2626;
       margin-top: 6px;
-      font-size: 11.5px;
-      padding: 7px;
+      font-size: 11px;
+      padding: 6px;
     }
 
     /* TOAST */
@@ -1216,7 +1220,6 @@
         min-width: 100%;
       }
 
-      /* Sub-filter Chips bisa di-scroll samping bila sempit */
       .sub-filters {
         gap: 6px;
         margin-bottom: 10px;
@@ -1233,25 +1236,21 @@
         gap: 10px;
       }
 
-      /* Modal Scanner di HP pas 1 panel tanpa zoom */
+      /* Modal Scanner di HP: Kotak 1:1 proporsional & pas 1 layar */
       .modal-overlay {
         padding: 8px;
       }
 
       .modal-box {
         padding: 14px;
-        border-radius: 16px;
+        border-radius: 18px;
         max-height: 95dvh;
       }
 
       .camera-wrapper {
-        height: 185px;
-        max-height: 25dvh;
-        margin-bottom: 8px;
-      }
-
-      #reader video {
-        max-height: 185px !important;
+        width: 215px;
+        height: 215px;
+        margin: 0 auto 10px auto;
       }
 
       .toast {
@@ -1479,12 +1478,12 @@
     </div>
   </div>
 
-  <!-- MODAL SCAN BARCODE & KAMERA -->
+  <!-- MODAL SCAN BARCODE & KAMERA (KOTAK 1:1) -->
   <div class="modal-overlay" id="modalScan">
     <div class="modal-box">
       <div class="modal-header">
         <div class="modal-title">
-          <i class="fa-solid fa-barcode" style="color: #f59e0b;"></i> Scan Kartu Undangan
+          <i class="fa-solid fa-qrcode" style="color: #f59e0b;"></i> Scan Kartu Undangan
         </div>
         <button class="btn-close-modal" onclick="tutupModalScan()">✕</button>
       </div>
@@ -1499,14 +1498,14 @@
         </button>
       </div>
 
-      <!-- Kamera Scanner -->
+      <!-- Kamera Scanner Kotak 1:1 -->
       <div id="sectionCameraScanner">
         <div class="camera-wrapper">
           <div id="reader"></div>
           <div class="camera-idle-placeholder" id="cameraIdleBox">
-            <i class="fa-solid fa-camera-rotate"></i>
-            <p style="font-size: 12.5px; font-weight: 700; color: #e2e8f0; margin-bottom: 2px;">Kamera Siap Digunakan</p>
-            <p style="font-size: 11px; color: #94a3b8;">Arahkan barcode / QR kartu ke tengah layar</p>
+            <i class="fa-solid fa-qrcode"></i>
+            <p style="font-size: 12.5px; font-weight: 700; color: #e2e8f0; margin-bottom: 2px;">Kamera QR Siap</p>
+            <p style="font-size: 11px; color: #94a3b8;">Arahkan QR / Barcode ke dalam kotak</p>
           </div>
         </div>
 
@@ -1539,7 +1538,7 @@
       </div>
 
       <!-- Live Search Results Dropdown -->
-      <div id="quickScanResults" style="max-height: 130px; overflow-y: auto; margin-bottom: 4px;"></div>
+      <div id="quickScanResults" style="max-height: 120px; overflow-y: auto; margin-bottom: 4px;"></div>
 
       <!-- Hasil Kartu Tamu Terdeteksi -->
       <div class="scan-result-card" id="scanResultCard">
@@ -2004,7 +2003,7 @@
     }
 
     // ==========================================
-    // SISTEM BARCODE & SCANNER KAMERA (PROPORSIONAL)
+    // SISTEM BARCODE & SCANNER KAMERA (KOTAK 1:1)
     // ==========================================
 
     function switchScanMode(mode) {
@@ -2062,14 +2061,14 @@
         html5QrScanner = new Html5Qrcode("reader");
       }
 
-      // Dynamic qrbox supaya tidak pernah melebihi lebar layar HP/Tablet/Laptop
+      // Konfigurasi Kotak Persegi 1:1 (QR / Barcode Style)
       const qrConfig = {
         fps: 15,
+        aspectRatio: 1.0,
         qrbox: function(viewfinderWidth, viewfinderHeight) {
           const minEdge = Math.min(viewfinderWidth, viewfinderHeight);
-          const boxWidth = Math.max(140, Math.min(Math.floor(viewfinderWidth * 0.75), 240));
-          const boxHeight = Math.max(110, Math.min(Math.floor(minEdge * 0.72), 160));
-          return { width: boxWidth, height: boxHeight };
+          const boxSize = Math.max(140, Math.floor(minEdge * 0.76));
+          return { width: boxSize, height: boxSize };
         }
       };
 
